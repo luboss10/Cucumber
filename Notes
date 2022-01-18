@@ -1,0 +1,96 @@
+FRAMEWORK-
+
+It gives us organized structure
+proper folder hierarchy
+single execution point
+separate place for different code
+
+
+programming language --->Java...tool--->Selenium...version control--->Git...build tool--->Maven
+
+We use Maven as build management tool
+
+group Id - company name
+artifact Id - project name
+
+main folder - for development code
+test folder - for testing code
+            -java - for coding part
+            -resources - for non coding part
+
+
+pom.xml - to add dependency
+it is a configuration file which is considered as a backbone of the maven project
+
+CUCUMBER--------testing tool that support Behaviour Driven Development (BDD) framework
+                where we write our test cases specification in Gherkin language(plain English)
+
+                KEYWORDS - features, background, scenario,
+                         - Given - pre condition -- Given user is navigated to the HRMS application
+                         - When - Actions - you perform -- When user enters username and password
+                         - And - Supporting tag- this tag comes with other keyword -- And i click on login button
+                         - Then - Expected output - result - Then user should be able to see dashboard page
+
+                         - Feature - .feature - to write a scenario we use feature file
+                         - Scenario- TestCase -- Admin should be able to search an employee in HRMS application
+
+Acceptance criteria:
+1.search by id
+2.search by name
+
+1.
+Given user opens browser and navigate to HRMS
+And user is logged in as an Admin
+And user is on employee list page
+When user enters valid employee ID
+And user clicks on search button
+Then user sees employee in the employee table
+2.
+Given user opens browser and navigate to HRMS
+And user is logged in as an Admin
+And user is on employee list page
+When user enters first and last name
+And user clicks on search button
+Then user sees employee in the employee table
+
+
+Login feature
+recap
+To increase transparency/ to reduce communication gap
+supports BDD(Gherkin) language - easy to understand for non technical ppl also
+Focus on end user/costumer
+
+Feature files- to write test scenarios
+
+Keywords:
+given - pre condition
+when - performs action
+and - supporting tag
+then - results
+
+Step definition - to implement the code for the steps written in feature file, we use step definitions
+
+Runner class -
+to configure the execution flow of our test cases
+
+@runwith - from junit
+@cucumberoptions - to provide configurations
+
+features - path of my files
+glue - path of the step definitions for feature files
+dryrun - if it is set to true, it stops actual execution and provides the missing steps snippet
+monochrome - it removes unreadable character and cleans the console
+tags - for grouping
+plugins - for report generation and other purposes
+
+Background - to put steps among all scenarios from single feature file, we use background
+
+Hooks - we use hooks to provide pre conditions and post conditions in cucumber
+      - We should always provide hooks under the package where my steps are available
+
+
+
+
+
+
+
